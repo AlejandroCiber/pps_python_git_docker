@@ -1,16 +1,16 @@
 from flask import Flask, jsonify
-from bayeta import frotar
+from bayeta import frotar  # Importamos la función aleatoria
 
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+def hola_mundo():
     return "Hola, mundo"
 
-@app.route('/frotar/<int:n_frases>')
-def frotar_endpoint(n_frases):
-    # Por ahora devuelve la misma frase repetida N veces
-    return jsonify(frotar(n_frases))
+@app.route('/frotar/<int:n_frases>', methods=['GET'])
+def endpoint_frotar(n_frases):
+    frases = frotar(n_frases)
+    return jsonify(frases)
 
 if __name__ == '__main__':
     app.run(debug=True)
