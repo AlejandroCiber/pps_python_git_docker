@@ -4,6 +4,6 @@ venv/
 # Archivos compilados de Python
 __pycache__/
 *.pyc
-
+.env
 # Otros posibles archivos innecesarios
 .DS_Store   # MacOS
